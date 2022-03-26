@@ -6,15 +6,18 @@ block content
   div.container
     h1 Update scoreboard
 
-    form
-      label(for="teams") select team:
-      select#teams
-        option(value="redBull").redBull Red Bull
-        option(value="mercedes").mercedes Mercedes
-        option(value="ferrari").ferrari Scuderia Ferrari
+    form.flex
+      div
+        label(for="teams") Team:
+        select#teams
+          option(value="redBull").redBull Red Bull
+          option(value="mercedes").mercedes Mercedes
+          option(value="ferrari").ferrari Scuderia Ferrari
+      div
+        label(for="score")  Score:
+        input(type="text")#score
 
-      input(type="text").score
-      input(type="submit").submit
+      input(type="submit", value="Update statistics").submit
 
     span.redBullScore.hidden
     span.mercedesScore.hidden

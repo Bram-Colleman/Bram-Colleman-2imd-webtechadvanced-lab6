@@ -19,8 +19,54 @@ a {
 
 .logo {
   max-width: 150px;
+  margin-left: 50px;
 }
 
 .container {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+
+}
+.col {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid red;
+}
+.flex {
+  max-width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.flex form{
+  flex-grow: 1;
+}
+
+.submit {
+  background-color: red;
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+#score, #teams {
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  border: 1px red solid
+}
+
+label {
+  padding: 10px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
 }

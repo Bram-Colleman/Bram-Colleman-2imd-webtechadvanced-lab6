@@ -11,7 +11,7 @@ document.querySelector(".submit").addEventListener("click", e => {
     e.preventDefault();
     primus.write({ 
         team: document.querySelector("#teams").value,
-        score: document.querySelector(".score").value
+        score: document.querySelector("#score").value
     });
 });
 

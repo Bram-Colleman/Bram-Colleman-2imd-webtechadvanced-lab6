@@ -3,20 +3,20 @@ extends layout
 block content
   div.header
     img(src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg").logo
+  h1 Live scoreboard
   div.container
-    h1 Live scoreboard
-    div
+    div.col
       span.redBull redBull 
       span.redBullScore 0
-    div
+    div.col
       span.mercedes Mercedes 
       span.mercedesScore 0 
-    div
+    div.col
       span.ferrari Scuderia Ferrari 
       span.ferrariScore 0 
 
 
-  span.submit
+  span.submit.hidden
 
   script(src="./javascripts/app.js") 
 
