@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.header
+    img(src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg").logo
+  div.container
+    h1 Live scoreboard
+    div
+      span.redBull redBull 
+      span.redBullScore 0
+    div
+      span.mercedes Mercedes 
+      span.mercedesScore 0 
+    div
+      span.ferrari Scuderia Ferrari 
+      span.ferrariScore 0 
+
+
+  span.submit
+
+  script(src="./javascripts/app.js") 
+

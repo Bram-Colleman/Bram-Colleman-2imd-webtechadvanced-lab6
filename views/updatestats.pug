@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.header
+    img(src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg").logo
+  div.container
+    h1 Update scoreboard
+
+    form
+      label(for="teams") select team:
+      select#teams
+        option(value="redBull").redBull Red Bull
+        option(value="mercedes").mercedes Mercedes
+        option(value="ferrari").ferrari Scuderia Ferrari
+
+      input(type="text").score
+      input(type="submit").submit
+
+    span.redBullScore.hidden
+    span.mercedesScore.hidden
+    span.ferrariScore.hidden
+
+  script(src="./javascripts/app.js") 
+
