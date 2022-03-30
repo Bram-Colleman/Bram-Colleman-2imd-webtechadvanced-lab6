@@ -1,3 +1,4 @@
+const req = require('express/lib/request');
 const Primus = require('primus');
 
 let go = (server) => {

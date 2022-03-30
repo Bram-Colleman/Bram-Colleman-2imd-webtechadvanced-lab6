@@ -1,11 +1,20 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const upload = multer();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const teamsRouter = require('./routes/teams');
+
+mongoose.connect('mongodb+srv://BramColleman:admin@lab5.rnlkz.mongodb.net/lab6?retryWrites=true&w=majority');
+
 
 var app = express();
 
@@ -19,7 +28,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(upload.array()); 
+app.use(express.static('public'));
+
+app.use('/', teamsRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

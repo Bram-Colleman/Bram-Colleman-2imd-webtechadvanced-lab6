@@ -8,11 +8,13 @@ const primus = Primus.connect('/', {
 
 
 document.querySelector(".submit").addEventListener("click", e => {
-    e.preventDefault();
-    primus.write({ 
-        team: document.querySelector("#teams").value,
-        score: document.querySelector("#score").value
-    });
+    // e.preventDefault();
+      if(!isNaN(document.querySelector("#score").value)) {
+        primus.write({ 
+          team: document.querySelector("#teams").value,
+          score: document.querySelector("#score").value
+      });
+    }
 });
 
 

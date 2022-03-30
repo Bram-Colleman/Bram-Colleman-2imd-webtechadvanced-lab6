@@ -5,17 +5,18 @@ block content
     img(src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg").logo
   div.container
     h1 Update scoreboard
+    span.error=errormsg
 
-    form.flex
+    form(method="post").flex
       div
         label(for="teams") Team:
-        select#teams
+        select(name="teams")#teams
           option(value="redBull").redBull Red Bull
           option(value="mercedes").mercedes Mercedes
           option(value="ferrari").ferrari Scuderia Ferrari
       div
         label(for="score")  Score:
-        input(type="text")#score
+        input(type="text", name="score")#score
 
       input(type="submit", value="Update statistics").submit
 
@@ -23,5 +24,5 @@ block content
     span.mercedesScore.hidden
     span.ferrariScore.hidden
 
-  script(src="./javascripts/app.js") 
+  script(src="./javascripts/app.js")
 
